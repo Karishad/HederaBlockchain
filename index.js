@@ -70,12 +70,13 @@ async function main() {
 	console.log("The new account has acknowledged the request.");
 	
 		sendHbar = await new TransferTransaction()
-        .addHbarTransfer(newAccountId, Hbar.fromTinybars(-50))
-        .addHbarTransfer(myAccountId, Hbar.fromTinybars(50))
+        .addHbarTransfer(myAccountId, Hbar.fromTinybars(-50))
+        .addHbarTransfer(newAccountId, Hbar.fromTinybars(50))
         .execute(client);
 		
 	 transactionReceipt = await sendHbar.getReceipt(client);
 	console.log("The transfer transaction from the old account to the new account was: " + transactionReceipt.status.toString());
 	
+	console.log("The account balance after the transfer is: " + getNewBalance.hbars.toTinybars() + " tinybar.")
 }
 main();
