@@ -1,4 +1,4 @@
-const { Client, PrivateKey, AccountCreateTransaction, AccountBalanceQuery, Hbar, TransferTransaction, Hbar2, TransferTransaction2 } = require("@hashgraph/sdk");
+const { Client, PrivateKey, AccountCreateTransaction, AccountBalanceQuery, Hbar, TransferTransaction } = require("@hashgraph/sdk");
 require("dotenv").config();
 
 async function main() {
@@ -69,12 +69,11 @@ async function main() {
 	console.log("The old account has requested 50 more TinyBars from the new account.");
 	console.log("The new account has acknowledged the request.");
 	
-	const sendHbar2 = await new TransferTransaction2()
-        .addHbarTransfer(newAccountId, Hbar2.fromTinybars(-50))
-        .addHbarTransfer(myAccountId, Hbar2.fromTinybars(50))
+		TransferTransaction()
+        .addHbarTransfer(newAccountId, Hbar.fromTinybars(-50))
+        .addHbarTransfer(myAccountId, Hbar.fromTinybars(50))
         .execute(client);
-	
-	const transactionReceipt2 = await sendHbar2.getReceipt(client);
-	console.log("The transfer transaction from the new account to the old account was: " + transactionReceipt2.status.toString());
+		
+	console.log("The transfer transaction from the old account to the new account was: " + transactionReceipt.status.toString());
 }
 main();
