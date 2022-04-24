@@ -1,0 +1,23 @@
+{
+  "name": "hederablockchain",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Karishad/HederaBlockchain.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Karishad/HederaBlockchain/issues"
+  },
+  "homepage": "https://github.com/Karishad/HederaBlockchain#readme",
+  "dependencies": {
+    "@hashgraph/sdk": "^2.13.1",
+    "dotenv": "^16.0.0"
+  }
+}
