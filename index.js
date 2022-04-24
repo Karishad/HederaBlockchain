@@ -75,6 +75,10 @@ async function main() {
         .execute(client);
 		
 	 transactionReceipt = await sendHbar.getReceipt(client);
+	 
+	  getNewBalance = await new AccountBalanceQuery()
+        .setAccountId(newAccountId)
+        .execute(client);
 	
 	console.log("The account balance after the transfer is: " + getNewBalance.hbars.toTinybars() + " tinybar.")
 }
