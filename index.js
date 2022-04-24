@@ -75,6 +75,6 @@ async function main() {
         .execute(client);
 	
 	const transactionReceipt2 = await sendHbar2.getReceipt(client);
-	console.log("The transfer transaction from the new account to the old account was: " + transactionReceipt.status.toString());
+	console.log("The transfer transaction from the new account to the old account was: " + transactionReceipt2.status.toString());
 }
 main();
