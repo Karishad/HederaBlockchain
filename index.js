@@ -36,7 +36,7 @@ async function main() {
     console.log("The new account ID is: " + newAccountId);
 
     //Verify the account balance
-    const accountBalance = await new AccountBalanceQuery()
+    accountBalance = await new AccountBalanceQuery()
         .setAccountId(newAccountId)
         .execute(client);
 
