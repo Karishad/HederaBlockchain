@@ -1,4 +1,4 @@
-const { Client, PrivateKey, AccountCreateTransaction, AccountBalanceQuery, Hbar, TransferTransaction } = require("@hashgraph/sdk");
+const { Client, PrivateKey, AccountCreateTransaction, AccountBalanceQuery, Hbar, TransferTransaction, Hbar2, TransferTransaction2 } = require("@hashgraph/sdk");
 require("dotenv").config();
 
 async function main() {
@@ -70,8 +70,8 @@ async function main() {
 	console.log("The new account has acknowledged the request.");
 	
 	const sendHbar2 = await new TransferTransaction2()
-        .addHbarTransfer(newAccountId, Hbar.fromTinybars(-50))
-        .addHbarTransfer(myAccountId, Hbar.fromTinybars(50))
+        .addHbarTransfer(newAccountId, Hbar2.fromTinybars(-50))
+        .addHbarTransfer(myAccountId, Hbar2.fromTinybars(50))
         .execute(client);
 	
 	const transactionReceipt2 = await sendHbar2.getReceipt(client);
