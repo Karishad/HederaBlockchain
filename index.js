@@ -12,5 +12,11 @@ async function main() {
         myPrivateKey == null) {
         throw new Error("Environment variables myAccountId and myPrivateKey must be present");
     }
+
+    // Create our connection to the Hedera network
+    // The Hedera JS SDK makes this really easy!
+    const client = Client.forTestnet();
+
+    client.setOperator(myAccountId, myPrivateKey);
 }
 main();
