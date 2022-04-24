@@ -76,5 +76,7 @@ async function main() {
 		
 	 transactionReceipt = await sendHbar.getReceipt(client);
 	console.log("The transfer transaction from the old account to the new account was: " + transactionReceipt.status.toString());
+	
+	console.log("The new account balance is: " + accountBalance.hbars.toTinybars() + " tinybar.");
 }
 main();
