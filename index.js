@@ -74,7 +74,7 @@ async function main() {
         .addHbarTransfer(newAccountId, Hbar.fromTinybars(50))
         .execute(client);
 		
-	const transactionReceipt = await sendHbar.getReceipt(client);
+	 transactionReceipt = await sendHbar.getReceipt(client);
 	console.log("The transfer transaction from the old account to the new account was: " + transactionReceipt.status.toString());
 }
 main();
