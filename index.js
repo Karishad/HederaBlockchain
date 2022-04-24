@@ -69,7 +69,7 @@ async function main() {
 	console.log("The old account has requested 50 more TinyBars from the new account.");
 	console.log("The new account has acknowledged the request.");
 	
-		const sendHbar = await new TransferTransaction()
+		sendHbar = await new TransferTransaction()
         .addHbarTransfer(myAccountId, Hbar.fromTinybars(-50))
         .addHbarTransfer(newAccountId, Hbar.fromTinybars(50))
         .execute(client);
