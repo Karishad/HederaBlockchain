@@ -60,7 +60,7 @@ async function main() {
     console.log("The cost of query is: " + queryCost);
 
     //Check the new account's balance
-    const getNewBalance = await new AccountBalanceQuery()
+    getNewBalance = await new AccountBalanceQuery()
         .setAccountId(newAccountId)
         .execute(client);
 
@@ -75,7 +75,6 @@ async function main() {
         .execute(client);
 		
 	 transactionReceipt = await sendHbar.getReceipt(client);
-	console.log("The transfer transaction from the old account to the new account was: " + transactionReceipt.status.toString());
 	
 	console.log("The account balance after the transfer is: " + getNewBalance.hbars.toTinybars() + " tinybar.")
 }
