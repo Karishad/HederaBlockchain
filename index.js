@@ -70,8 +70,8 @@ async function main() {
 	console.log("The new account has acknowledged the request.");
 	
 		sendHbar = await new TransferTransaction()
-        .addHbarTransfer(myAccountId, Hbar.fromTinybars(-50))
-        .addHbarTransfer(newAccountId, Hbar.fromTinybars(50))
+        .addHbarTransfer(newAccountId, Hbar.fromTinybars(-50))
+        .addHbarTransfer(myAccountId, Hbar.fromTinybars(50))
         .execute(client);
 		
 	 transactionReceipt = await sendHbar.getReceipt(client);
